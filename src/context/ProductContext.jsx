@@ -6,7 +6,7 @@ import reducer from "../reducers/ProductReducer";
 
 const AppContext = createContext();
 
-const API = "https://gist.githubusercontent.com/ivyan26733/9499c29becf12136816434f458af67d6/raw/d85f35c289dd18b53ed36bb3372c48223c199aa4/airtribe.json";
+const API = "https://api.pujakaitem.com/api/products";
 
 const initialState = {
     isLoading: false,
@@ -36,7 +36,7 @@ const AppProvider =  ({children}) => {
     const getSingleProduct = async (url) => {
         dispatch({type:"SET_SINGLE_LOADING"})
         try {
-            const res = await axios.get(url);
+            const res = await axios.get();
             const singleProduct = await res.data;
             dispatch({type:"SET_SINGLE_PRODUCT" , payload:singleProduct})
         } catch (error) {

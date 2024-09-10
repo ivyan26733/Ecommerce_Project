@@ -48,7 +48,7 @@ const Cart_context = ({children}) => {
 
   
     useEffect(() => {
-        // dispatch({type: "CART_TOTAL_ITEM"})
+        dispatch({type: "CART_TOTAL_ITEM"})
         // dispatch({type:"GET_TOTAL_AMOUNT"})
         dispatch({type:"CART_ITEM_PRICE_TOTAL"})
         localStorage.setItem("Ivyan",JSON.stringify(state.cart))
